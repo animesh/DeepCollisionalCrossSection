@@ -15,7 +15,7 @@ def BiRNN_new(x, c, l, num_layers, num_hidden, meta_data,
             x = emb(x)
 
         num_layers=num_layers
-        with tf.name_scope("birnn"):
+        with tf.compat.v1.name_scope("birnn"):
             #lstm_fw_cell = [tf.contrib.rnn.DropoutWrapper(rnn.BasicLSTMCell(num_hidden), input_keep_prob = keep_prob) for _ in range(num_layers)]
             #lstm_bw_cell = [tf.contrib.rnn.DropoutWrapper(rnn.BasicLSTMCell(num_hidden), input_keep_prob = keep_prob) for _ in range(num_layers)]
             #lstm_fw_cell = [rnn.ConvLSTMCell(1,[66,32],128, (5,1)) for _ in range(num_layers)]	
@@ -53,14 +53,14 @@ def BiRNN(x, c, num_hidden, meta_data, num_classes, timesteps):
 	weights = {
 	# Hidden layer weights => 2*n_hidden +1 because of forward + backward cells + charge
 
-	'l1' : tf.Variable(tf.random_normal([2*num_hidden+meta_data.shape[1], num_hidden])),
-	'out': tf.Variable(tf.random_normal([num_hidden, num_classes]))
+	'l1' : tf.Variable(tf.random.normal([2*num_hidden+meta_data.shape[1], num_hidden])),
+	'out': tf.Variable(tf.random.normal([num_hidden, num_classes]))
 
 	}
 
 	biases = {
-	'l1': tf.Variable(tf.random_normal([num_hidden])),
-	'out': tf.Variable(tf.random_normal([num_classes]))
+	'l1': tf.Variable(tf.random.normal([num_hidden])),
+	'out': tf.Variable(tf.random.normal([num_classes]))
 	}
 
 	# Prepare data shape to match `rnn` function requirements
@@ -94,19 +94,19 @@ def BiRNN(x, c, num_hidden, meta_data, num_classes, timesteps):
 def conv_net(x, c, l, num_layers, num_hidden, meta_data, num_classes, timesteps, keep_prob, uncertainty, is_train=True):
 
 	# Define a scope for reusing the variables
-	with tf.variable_scope('ConvNet'):
+	with tf.compat.v1.variable_scope('ConvNet'):
 		x = x[...,tf.newaxis]
 		# Convolution Layer with 32 filters and a kernel size of 5
-		net = tf.layers.conv1d(x, 32, 8, activation=tf.nn.relu, padding='SAME')
-		net = tf.layers.conv1d(net, 64, 6, activation=tf.nn.relu, padding='SAME')
-		net = tf.layers.conv1d(net, 128, 5, activation=tf.nn.relu, padding='SAME')
-		net = tf.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
-		net = tf.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
-		net = tf.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
-		s = tf.shape(net)
+		net = tf.compat.v1.layers.conv1d(x, 32, 8, activation=tf.nn.relu, padding='SAME')
+		net = tf.compat.v1.layers.conv1d(net, 64, 6, activation=tf.nn.relu, padding='SAME')
+		net = tf.compat.v1.layers.conv1d(net, 128, 5, activation=tf.nn.relu, padding='SAME')
+		net = tf.compat.v1.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
+		net = tf.compat.v1.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
+		net = tf.compat.v1.layers.conv1d(net, 128, 3, activation=tf.nn.relu, padding='SAME')
+		s = tf.shape(input=net)
 		print(net)
 
-		net = tf.layers.average_pooling1d(
+		net = tf.compat.v1.layers.average_pooling1d(
 										net,
 										(66),
 										strides=1,
@@ -117,24 +117,24 @@ def conv_net(x, c, l, num_layers, num_hidden, meta_data, num_classes, timesteps,
 		net = tf.concat([net, c], axis=1)   
 
 	# Fully connected layer (in tf contrib folder for now
-	fc1 = tf.layers.dense(net, num_hidden)
+	fc1 = tf.compat.v1.layers.dense(net, num_hidden)
 	# Apply Dropout (if is_training is False, dropout is not applied)
 	# Output layer, class prediction
-	preds = tf.layers.dense(fc1, num_classes, activation=None)
+	preds = tf.compat.v1.layers.dense(fc1, num_classes, activation=None)
 	print(preds)
 	#sys.exit()
 	return preds, fc1, None, None, None, None
 
 def mlp(x, c, l, num_layers, num_hidden, meta_data, num_classes, timesteps, keep_prob, uncertainty, is_train=True):
     # Define a scope for reusing the variables
-    with tf.variable_scope('MLP'):
+    with tf.compat.v1.variable_scope('MLP'):
         net = tf.contrib.layers.flatten(x)
         net = tf.concat([net, c], axis=1)   
         fc = net
         for _ in range(num_layers):
-            fc = tf.layers.dense(fc, num_hidden, activation=tf.nn.relu)
-            fc = tf.layers.dropout(fc, rate=keep_prob)
-        preds = tf.layers.dense(fc, num_classes, activation=None)
+            fc = tf.compat.v1.layers.dense(fc, num_hidden, activation=tf.nn.relu)
+            fc = tf.compat.v1.layers.dropout(fc, rate=keep_prob)
+        preds = tf.compat.v1.layers.dense(fc, num_classes, activation=None)
 
            # Fully connected layer (in tf contrib folder for now
            # Apply Dropout (if is_training is False, dropout is not applied)
@@ -144,10 +144,10 @@ def mlp(x, c, l, num_layers, num_hidden, meta_data, num_classes, timesteps, keep
 def logreg(x, c, l, num_layers, num_hidden, meta_data, num_classes, timesteps, keep_prob, uncertainty, is_train=True):
 
     # Define a scope for reusing the variables
-    with tf.variable_scope('LogReg'):
+    with tf.compat.v1.variable_scope('LogReg'):
         net = tf.contrib.layers.flatten(x)
         net = tf.concat([net, c], axis=1)   
-        preds = tf.layers.dense(net, num_classes)
+        preds = tf.compat.v1.layers.dense(net, num_classes)
         # Fully connected layer (in tf contrib folder for now
         # Apply Dropout (if is_training is False, dropout is not applied)
         # Output layer, class prediction

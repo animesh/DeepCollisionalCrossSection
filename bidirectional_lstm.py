@@ -1,13 +1,14 @@
 from __future__ import print_function
 
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 import pandas as pd
 import numpy as np
 import scipy
 import matplotlib.pyplot as plt
 import seaborn as sns
 import random, sys, os, json
-from models import BiRNN_new
+#from models import BiRNN_new
 #from models import BiRNN_attention, BiRNN_attention_multitask, conv_net, mlp, logreg, Transformer
 from data_util import get_data_set, unscale
 from sklearn.metrics import accuracy_score
@@ -15,7 +16,7 @@ from data_util import DUMMY, Delta_t95
 import time
 
 np.random.seed(13)
-tf.set_random_seed(13)
+tf.random.set_seed(42)
 random.seed(22)
 classification = False
 
@@ -153,7 +154,7 @@ if __name__ == '__main__':
     model_params['reduce_lr_step'] = 50000#50000#35000
 
     if model_params['num_tasks'] == -1:
-        model = BiRNN_new
+        model = tf.compat.v1.nn.bidirectional_dynamic_rnn
     else:
         model = BiRNN_attention_multitask
     if model_params['simple']:
@@ -189,88 +190,90 @@ if __name__ == '__main__':
     dataset = dataset.prefetch(1) 
     dataset_test = dataset_test.batch(model_params['batch_size'])
     dataset_test = dataset_test.prefetch(1) 
-    iter = dataset.make_initializable_iterator()
+    iter = tf.compat.v1.data.make_initializable_iterator(dataset)
     next_element = iter.get_next()
-    iter_test = dataset_test.make_initializable_iterator()
+    iter_test = tf.compat.v1.data.make_initializable_iterator(dataset_test)
     next_element_test = iter_test.get_next()
 
     #build graph
     if not model_params['simple']:
         #X = tf.placeholder("float", [None, model_params['timesteps'], model_params['num_input']])
-        X = tf.placeholder("float", [None, model_params['timesteps']])
+        X = tf.compat.v1.placeholder("float", [None, model_params['timesteps']])
     else:
-        X = tf.placeholder("float", [None, model_params['num_input']])
+        X = tf.compat.v1.placeholder("float", [None, model_params['num_input']])
 
     if model_params['num_classes'] == 1:
-        Y = tf.placeholder("float", [None, 1])
+        Y = tf.compat.v1.placeholder("float", [None, 1])
     else:
-        Y = tf.placeholder("int64", [None, 1])
+        Y = tf.compat.v1.placeholder("int64", [None, 1])
 
     if model_params['num_tasks'] != -1:
-        T = tf.placeholder("int32", [None])
+        T = tf.compat.v1.placeholder("int32", [None])
 
-    C = tf.placeholder("float", [None, meta_data.shape[1]])
-    L = tf.placeholder("int32", [None])
+    C = tf.compat.v1.placeholder("float", [None, meta_data.shape[1]])
+    L = tf.compat.v1.placeholder("int32", [None])
 
-    dropout = tf.placeholder("float", ())
+    dropout = tf.compat.v1.placeholder("float", ())
     if model_params['num_tasks'] == -1:
         prediction, logits, weights, biases, attention, cert = model(X, C, L, model_params['num_layers'], model_params['num_hidden'],  meta_data,
                                                                      model_params['num_classes'],
-                                                                     model_params['timesteps'], keep_prob=dropout,
-                                                                     uncertainty=model_params['use_uncertainty'])
+                                                                     model_params['timesteps'],# keep_prob=dropout,
+                                                                     #uncertainty=model_params['use_uncertainty']
+																	 )
     else:
         prediction, logits, weights, biases, attention, cert = model(X, C, L, model_params['num_tasks'], model_params['num_layers'], model_params['num_hidden'], meta_data,
                                                                      model_params['num_classes'],
-                                                                     model_params['timesteps'], keep_prob=dropout,
-                                                                     uncertainty=model_params['use_uncertainty'])
+                                                                     model_params['timesteps'],# keep_prob=dropout,
+                                                                     #uncertainty=model_params['use_uncertainty']
+																	 )
 
 
     if model_params['num_classes'] == 1:
         if not model_params['use_uncertainty']: #standard regression
 
             if model_params['num_tasks'] == -1:
-                loss_op = tf.losses.mean_squared_error(predictions=prediction, labels=Y)
+                loss_op = tf.compat.v1.losses.mean_squared_error(predictions=prediction, labels=Y)
             else: #multitask regression.
 
                 pp = tf.reshape(tf.stack(prediction, axis=1), [-1, model_params['num_tasks']])
-                ppp = tf.reshape(tf.reduce_sum(pp * tf.one_hot(T, model_params['num_tasks']), axis=1), [-1, 1])
-                loss_op = tf.losses.mean_squared_error(predictions=ppp, labels=Y)
+                ppp = tf.reshape(tf.reduce_sum(input_tensor=pp * tf.one_hot(T, model_params['num_tasks']), axis=1), [-1, 1])
+                loss_op = tf.compat.v1.losses.mean_squared_error(predictions=ppp, labels=Y)
 
         else:
             loss_op = tf.pow(prediction - Y, 2)/2 * tf.exp(-cert) + 1/2*cert
-            loss_op = tf.reduce_mean(loss_op)
+            loss_op = tf.reduce_mean(input_tensor=loss_op)
     else:
         loss_op = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(Y,[-1]), logits=prediction)   
-        loss_op = tf.reduce_mean(loss_op)
+        loss_op = tf.reduce_mean(input_tensor=loss_op)
 
     
-    learning_rate = tf.placeholder(tf.float32)
-    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
+    learning_rate = tf.compat.v1.placeholder(tf.float32)
+    optimizer = tf.compat.v1.train.AdamOptimizer(learning_rate=learning_rate)
     train_op = optimizer.minimize(loss_op)
 
     # Initialize the variables (i.e. assign their default value)
-    saver = loader = tf.train.Saver(tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES), max_to_keep=1)
+    saver = loader = tf.compat.v1.train.Saver(tf.compat.v1.get_collection(tf.compat.v1.GraphKeys.TRAINABLE_VARIABLES), max_to_keep=1)
 
-    pearson_ph = tf.placeholder(tf.float32, shape=())
-    ce_ph = tf.placeholder(tf.float32, shape=())
-    rel_std_ph = tf.placeholder(tf.float32, shape=())
-    deltat_ph = tf.placeholder(tf.float32, shape=())
+    pearson_ph = tf.compat.v1.placeholder(tf.float32, shape=())
+    ce_ph = tf.compat.v1.placeholder(tf.float32, shape=())
+    rel_std_ph = tf.compat.v1.placeholder(tf.float32, shape=())
+    deltat_ph = tf.compat.v1.placeholder(tf.float32, shape=())
 
     if model_params['num_classes'] == 1:
-        tf.summary.scalar('pearson', pearson_ph)
-        tf.summary.scalar('relative error std', rel_std_ph)
-        tf.summary.scalar('r2', deltat_ph)
+        tf.compat.v1.summary.scalar('pearson', pearson_ph)
+        tf.compat.v1.summary.scalar('relative error std', rel_std_ph)
+        tf.compat.v1.summary.scalar('r2', deltat_ph)
     else:
-       tf.summary.scalar('accuracy', pearson_ph)
-    tf.summary.scalar('cross_entropy', ce_ph)
+       tf.compat.v1.summary.scalar('accuracy', pearson_ph)
+    tf.compat.v1.summary.scalar('cross_entropy', ce_ph)
 
     #init model
-    init = [tf.global_variables_initializer(), iter.initializer, iter_test.initializer]
-    sess = tf.Session()
+    init = [tf.compat.v1.global_variables_initializer(), iter.initializer, iter_test.initializer]
+    sess = tf.compat.v1.Session()
 
-    merged = tf.summary.merge_all()
-    train_writer = tf.summary.FileWriter(model_params['model_dir'] + 'train', sess.graph)
-    test_writer = tf.summary.FileWriter(model_params['model_dir'] + 'test')
+    merged = tf.compat.v1.summary.merge_all()
+    train_writer = tf.compat.v1.summary.FileWriter(model_params['model_dir'] + 'train', sess.graph)
+    test_writer = tf.compat.v1.summary.FileWriter(model_params['model_dir'] + 'test')
 
 
 

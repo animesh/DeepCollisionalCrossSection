@@ -11,7 +11,7 @@ import pickle
 
 np.random.seed(13)
 random.seed(22)
-tf.set_random_seed(13)
+tf.compat.v1.set_random_seed(13)
 classification = False
 DUMMY = 22
 
@@ -97,7 +97,7 @@ def get_data_set(model_params, return_array=False, middle=False):
     reverse = False
     intrinsic_test = model_params['train_file'] == model_params['test_file']
 
-    sname = 'Modified_sequence'
+    sname = 'Sequence'
     data=pd.read_pickle(model_params['train_file'])
     data = data.sample(frac=1).reset_index(drop=True)
 
@@ -178,7 +178,7 @@ def get_data_set(model_params, return_array=False, middle=False):
     lab = np.reshape(lab, [lab.shape[0], 1])
 
 
-    data['lens'] = data['Modified_sequence'].str.len()
+    data['lens'] = data['Sequence'].str.len()
     dtest = data.iloc[test_idx]
     dtrain = data.iloc[training_idx]
 

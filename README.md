@@ -1,3 +1,17 @@
+## setup / towards tf2 and use score instead of CCS ...
+git clone https://github.com/animesh/DeepCollisionalCrossSection
+cd DeepCollisionalCrossSection
+#pip install seaborb
+pip install -r requirements.txt
+python process_data_final.py evidence.txt
+pip install tensorflow-gpu --user
+grep "RNN" *.py | awk -F ':' '{print $1}'  | sort | uniq -c
+tf_upgrade_v2 --infile bidirectional_lstm.py --outfile bidirectional_lstm.py
+tf_upgrade_v2 --infile data_util.py --outfile data_util.py
+tf_upgrade_v2 --infile models.py --outfile models.py
+python run_training.py
+
+
 # CCS Model Training and Prediction
 
 Publication:
