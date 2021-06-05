@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "run_training.py", line 7, in <module>
+    wandb.log({'accuracy': train_acc, 'loss': train_loss})
+NameError: name 'train_acc' is not defined

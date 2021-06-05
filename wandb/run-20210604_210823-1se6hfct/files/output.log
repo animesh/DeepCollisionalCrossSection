@@ -1,0 +1,325 @@
+
+running ccs
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+unique sequences training 648 test 73
+done generating data trainsize: 334 testsize 76
+{'lab_name': 'label', 'fname': 'cache/one_dat_cache_full_label.npy', 'num_input': 32, 'timesteps': 66, 'num_hidden': 128, 'num_layers': 2, 'num_classes': 1, 'dropout_keep_prob': 0.9, 'use_uncertainty': False, 'use_attention': True, 'simple': False, 'num_tasks': -1, 'batch_size': 64, 'model_dir': 'out//', 'model_dir_pretrain': None, 'lr_base': 0.001, 'training_steps': 55000, 'reduce_lr_step': 50000, 'train_file': 'evidence.txt_proc_2_test.pkl', 'test_file': 'evidence.txt_proc_2_test.pkl', 'reduce_train': 0.5, 'scaling_dict': {'0': (6.7287, 163.77)}}
+Tensor("concat:0", shape=(?, 256), dtype=float32) Tensor("stack_bidirectional_rnn/cell_1/bidirectional_rnn/bw/bw/while/Exit_4:0", shape=(?, 128), dtype=float32) Tensor("stack_bidirectional_rnn/cell_1/bidirectional_rnn/fw/fw/while/Exit_4:0", shape=(?, 128), dtype=float32)
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/models.py:23: BasicLSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/contrib/rnn/python/ops/rnn.py:233: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2021-06-04 21:08:34.969748: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-04 21:08:34.990599: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3392140000 Hz
+2021-06-04 21:08:34.994221: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5564e3427380 executing computations on platform Host. Devices:
+2021-06-04 21:08:34.994268: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2021-06-04 21:08:35.063375: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2021-06-04 21:08:35.063515: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:148] kernel driver does not appear to be running on this host (DMED7596): /proc/driver/nvidia/version does not exist
+Step 0, Minibatch Loss= 0.2020 time elapsed: 1.9010s
+Step 1, Minibatch Loss= 0.0678 time elapsed: 0.7013s
+Step 200, Minibatch Loss= 0.0174 time elapsed: 48.9246s
+Step 400, Minibatch Loss= 0.0080 time elapsed: 51.9219s
+Step 600, Minibatch Loss= 0.0029 time elapsed: 51.8196s
+Step 800, Minibatch Loss= 0.0003 time elapsed: 51.5833s
+Step 1000, Minibatch Loss= 0.0003 time elapsed: 51.4807s
+Step 1200, Minibatch Loss= 0.0001 time elapsed: 51.5319s
+Step 1400, Minibatch Loss= 0.0001 time elapsed: 51.6816s
+Step 1600, Minibatch Loss= 0.0000 time elapsed: 52.8598s
+Step 1800, Minibatch Loss= 0.0001 time elapsed: 52.7186s
+Step 2000, Minibatch Loss= 0.0001 time elapsed: 53.1497s
+Step 2200, Minibatch Loss= 0.0004 time elapsed: 53.0930s
+Step 2400, Minibatch Loss= 0.0001 time elapsed: 54.1490s
+Step 2600, Minibatch Loss= 0.0000 time elapsed: 52.7364s
+Step 2800, Minibatch Loss= 0.0000 time elapsed: 50.5339s
+Step 3000, Minibatch Loss= 0.0000 time elapsed: 50.6352s
+Step 3200, Minibatch Loss= 0.0000 time elapsed: 51.6778s
+Step 3400, Minibatch Loss= 0.0005 time elapsed: 53.0666s
+Step 3600, Minibatch Loss= 0.0000 time elapsed: 53.2564s
+Step 3800, Minibatch Loss= 0.0000 time elapsed: 53.1604s
+Step 4000, Minibatch Loss= 0.0000 time elapsed: 53.1826s
+Step 4200, Minibatch Loss= 0.0002 time elapsed: 52.3894s
+Step 4400, Minibatch Loss= 0.0004 time elapsed: 50.6771s
+Step 4600, Minibatch Loss= 0.0000 time elapsed: 51.2317s
+Step 4800, Minibatch Loss= 0.0000 time elapsed: 51.1880s
+Step 5000, Minibatch Loss= 0.0001 time elapsed: 52.4661s
+Step 5200, Minibatch Loss= 0.0002 time elapsed: 51.3058s
+Step 5400, Minibatch Loss= 0.0000 time elapsed: 51.6023s
+Step 5600, Minibatch Loss= 0.0000 time elapsed: 50.7788s
+Step 5800, Minibatch Loss= 0.0001 time elapsed: 50.6573s
+Step 6000, Minibatch Loss= 0.0000 time elapsed: 50.7080s
+Step 6200, Minibatch Loss= 0.0000 time elapsed: 50.5825s
+Step 6400, Minibatch Loss= 0.0000 time elapsed: 50.6091s
+Step 6600, Minibatch Loss= 0.0000 time elapsed: 50.6747s
+Step 6800, Minibatch Loss= 0.0000 time elapsed: 51.1181s
+Step 7000, Minibatch Loss= 0.0001 time elapsed: 51.0567s
+Step 7200, Minibatch Loss= 0.0000 time elapsed: 50.9956s
+Step 7400, Minibatch Loss= 0.0000 time elapsed: 50.9845s
+Step 7600, Minibatch Loss= 0.0000 time elapsed: 50.6556s
+Step 7800, Minibatch Loss= 0.0003 time elapsed: 50.7190s
+Step 8000, Minibatch Loss= 0.0000 time elapsed: 50.2866s
+Step 8200, Minibatch Loss= 0.0000 time elapsed: 50.7803s
+Step 8400, Minibatch Loss= 0.0000 time elapsed: 50.9190s
+Step 8600, Minibatch Loss= 0.0003 time elapsed: 50.7563s
+Step 8800, Minibatch Loss= 0.0000 time elapsed: 50.5333s
+Step 9000, Minibatch Loss= 0.0000 time elapsed: 50.9180s
+Step 9200, Minibatch Loss= 0.0000 time elapsed: 50.3522s
+Step 9400, Minibatch Loss= 0.0000 time elapsed: 51.1115s
+Step 9600, Minibatch Loss= 0.0000 time elapsed: 50.7637s
+Step 9800, Minibatch Loss= 0.0005 time elapsed: 50.4766s
+Step 10000, Minibatch Loss= 0.0000 time elapsed: 50.4721s
+model saved
+Step 10200, Minibatch Loss= 0.0000 time elapsed: 50.7336s
+Step 10400, Minibatch Loss= 0.0000 time elapsed: 49.9567s
+Step 10600, Minibatch Loss= 0.0001 time elapsed: 50.1298s
+Step 10800, Minibatch Loss= 0.0001 time elapsed: 50.0556s
+Step 11000, Minibatch Loss= 0.0000 time elapsed: 49.9623s
+Step 11200, Minibatch Loss= 0.0000 time elapsed: 50.0055s
+Step 11400, Minibatch Loss= 0.0000 time elapsed: 50.1922s
+Step 11600, Minibatch Loss= 0.0000 time elapsed: 50.0686s
+Step 11800, Minibatch Loss= 0.0000 time elapsed: 50.1109s
+Step 12000, Minibatch Loss= 0.0000 time elapsed: 50.1434s
+Step 12200, Minibatch Loss= 0.0001 time elapsed: 50.1076s
+Step 12400, Minibatch Loss= 0.0000 time elapsed: 50.2038s
+Step 12600, Minibatch Loss= 0.0000 time elapsed: 50.2568s
+Step 12800, Minibatch Loss= 0.0000 time elapsed: 51.4872s
+Step 13000, Minibatch Loss= 0.0000 time elapsed: 50.3675s
+Step 13200, Minibatch Loss= 0.0000 time elapsed: 50.6450s
+Step 13400, Minibatch Loss= 0.0000 time elapsed: 50.5059s
+Step 13600, Minibatch Loss= 0.0000 time elapsed: 50.4910s
+Step 13800, Minibatch Loss= 0.0000 time elapsed: 50.5630s
+Step 14000, Minibatch Loss= 0.0000 time elapsed: 50.4434s
+Step 14200, Minibatch Loss= 0.0000 time elapsed: 50.5591s
+Step 14400, Minibatch Loss= 0.0000 time elapsed: 50.1440s
+Step 14600, Minibatch Loss= 0.0000 time elapsed: 48.6782s
+Step 14800, Minibatch Loss= 0.0000 time elapsed: 48.6979s
+Step 15000, Minibatch Loss= 0.0000 time elapsed: 48.5433s
+Step 15200, Minibatch Loss= 0.0000 time elapsed: 48.6917s
+Step 15400, Minibatch Loss= 0.0001 time elapsed: 48.5491s
+Step 15600, Minibatch Loss= 0.0000 time elapsed: 48.3238s
+Step 15800, Minibatch Loss= 0.0000 time elapsed: 48.7538s
+Step 16000, Minibatch Loss= 0.0001 time elapsed: 48.6106s
+Step 16200, Minibatch Loss= 0.0000 time elapsed: 48.6947s
+Step 16400, Minibatch Loss= 0.0000 time elapsed: 48.1038s
+Step 16600, Minibatch Loss= 0.0000 time elapsed: 48.6066s
+Step 16800, Minibatch Loss= 0.0000 time elapsed: 48.5605s
+Step 17000, Minibatch Loss= 0.0000 time elapsed: 48.4835s
+Step 17200, Minibatch Loss= 0.0001 time elapsed: 48.5920s
+Step 17400, Minibatch Loss= 0.0000 time elapsed: 48.5962s
+Step 17600, Minibatch Loss= 0.0000 time elapsed: 48.6366s
+Step 17800, Minibatch Loss= 0.0000 time elapsed: 48.6443s
+Step 18000, Minibatch Loss= 0.0000 time elapsed: 48.6150s
+Step 18200, Minibatch Loss= 0.0000 time elapsed: 48.6147s
+Step 18400, Minibatch Loss= 0.0000 time elapsed: 48.5849s
+Step 18600, Minibatch Loss= 0.0000 time elapsed: 48.6339s
+Step 18800, Minibatch Loss= 0.0000 time elapsed: 48.7428s
+Step 19000, Minibatch Loss= 0.0000 time elapsed: 48.6248s
+Step 19200, Minibatch Loss= 0.0000 time elapsed: 48.5976s
+Step 19400, Minibatch Loss= 0.0000 time elapsed: 48.4494s
+Step 19600, Minibatch Loss= 0.0000 time elapsed: 48.7057s
+Step 19800, Minibatch Loss= 0.0000 time elapsed: 48.6464s
+Step 20000, Minibatch Loss= 0.0000 time elapsed: 48.6259s
+model saved
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Step 20200, Minibatch Loss= 0.0000 time elapsed: 49.3121s
+Step 20400, Minibatch Loss= 0.0001 time elapsed: 48.7667s
+Step 20600, Minibatch Loss= 0.0000 time elapsed: 48.7342s
+Step 20800, Minibatch Loss= 0.0000 time elapsed: 48.6314s
+Step 21000, Minibatch Loss= 0.0000 time elapsed: 48.6428s
+Step 21200, Minibatch Loss= 0.0001 time elapsed: 49.5056s
+Step 21400, Minibatch Loss= 0.0000 time elapsed: 50.5501s
+Step 21600, Minibatch Loss= 0.0000 time elapsed: 50.5589s
+Step 21800, Minibatch Loss= 0.0000 time elapsed: 50.6623s
+Step 22000, Minibatch Loss= 0.0000 time elapsed: 50.5439s
+Step 22200, Minibatch Loss= 0.0000 time elapsed: 50.5469s
+Step 22400, Minibatch Loss= 0.0000 time elapsed: 50.5888s
+Step 22600, Minibatch Loss= 0.0000 time elapsed: 50.5815s
+Step 22800, Minibatch Loss= 0.0000 time elapsed: 50.5273s
+Step 23000, Minibatch Loss= 0.0000 time elapsed: 50.4949s
+Step 23200, Minibatch Loss= 0.0000 time elapsed: 51.1930s
+Step 23400, Minibatch Loss= 0.0000 time elapsed: 50.6737s
+Step 23600, Minibatch Loss= 0.0000 time elapsed: 50.8881s
+Step 23800, Minibatch Loss= 0.0000 time elapsed: 50.6593s
+Step 24000, Minibatch Loss= 0.0000 time elapsed: 50.5715s
+Step 24200, Minibatch Loss= 0.0000 time elapsed: 50.4888s
+Step 24400, Minibatch Loss= 0.0000 time elapsed: 50.5396s
+Step 24600, Minibatch Loss= 0.0000 time elapsed: 50.5056s
+Step 24800, Minibatch Loss= 0.0000 time elapsed: 50.5710s
+Step 25000, Minibatch Loss= 0.0000 time elapsed: 50.6159s
+Step 25200, Minibatch Loss= 0.0000 time elapsed: 50.8305s
+Step 25400, Minibatch Loss= 0.0000 time elapsed: 50.7852s
+Step 25600, Minibatch Loss= 0.0000 time elapsed: 50.6741s
+Step 25800, Minibatch Loss= 0.0000 time elapsed: 50.5304s
+Step 26000, Minibatch Loss= 0.0000 time elapsed: 50.4990s
+Step 26200, Minibatch Loss= 0.0000 time elapsed: 50.5246s
+Step 26400, Minibatch Loss= 0.0000 time elapsed: 50.5272s
+Step 26600, Minibatch Loss= 0.0000 time elapsed: 50.5391s
+Step 26800, Minibatch Loss= 0.0000 time elapsed: 50.5970s
+Step 27000, Minibatch Loss= 0.0000 time elapsed: 50.6656s
+Step 27200, Minibatch Loss= 0.0000 time elapsed: 50.5053s
+Step 27400, Minibatch Loss= 0.0000 time elapsed: 50.5175s
+Step 27600, Minibatch Loss= 0.0000 time elapsed: 50.4314s
+Step 27800, Minibatch Loss= 0.0000 time elapsed: 50.5449s
+Step 28000, Minibatch Loss= 0.0000 time elapsed: 50.5774s
+Step 28200, Minibatch Loss= 0.0000 time elapsed: 50.5931s
+Step 28400, Minibatch Loss= 0.0000 time elapsed: 50.6070s
+Step 28600, Minibatch Loss= 0.0000 time elapsed: 51.2510s
+Step 28800, Minibatch Loss= 0.0000 time elapsed: 50.7933s
+Step 29000, Minibatch Loss= 0.0000 time elapsed: 50.6704s
+Step 29200, Minibatch Loss= 0.0000 time elapsed: 50.6270s
+Step 29400, Minibatch Loss= 0.0000 time elapsed: 50.6574s
+Step 29600, Minibatch Loss= 0.0000 time elapsed: 50.5325s
+Step 29800, Minibatch Loss= 0.0000 time elapsed: 50.5547s
+Step 30000, Minibatch Loss= 0.0000 time elapsed: 50.5550s
+model saved
+Step 30200, Minibatch Loss= 0.0000 time elapsed: 51.1776s
+Step 30400, Minibatch Loss= 0.0000 time elapsed: 50.8157s
+Step 30600, Minibatch Loss= 0.0000 time elapsed: 50.8070s
+Step 30800, Minibatch Loss= 0.0000 time elapsed: 50.7046s
+Step 31000, Minibatch Loss= 0.0000 time elapsed: 50.5394s
+Step 31200, Minibatch Loss= 0.0000 time elapsed: 50.5763s
+Step 31400, Minibatch Loss= 0.0000 time elapsed: 50.5431s
+Step 31600, Minibatch Loss= 0.0000 time elapsed: 50.5195s
+Step 31800, Minibatch Loss= 0.0000 time elapsed: 50.3677s
+Step 32000, Minibatch Loss= 0.0000 time elapsed: 50.6080s
+Step 32200, Minibatch Loss= 0.0000 time elapsed: 50.5654s
+Step 32400, Minibatch Loss= 0.0000 time elapsed: 50.5933s
+Step 32600, Minibatch Loss= 0.0000 time elapsed: 50.6022s
+Step 32800, Minibatch Loss= 0.0000 time elapsed: 50.7291s
+Step 33000, Minibatch Loss= 0.0000 time elapsed: 50.6021s
+Step 33200, Minibatch Loss= 0.0000 time elapsed: 50.6025s
+Step 33400, Minibatch Loss= 0.0000 time elapsed: 50.6032s
+Step 33600, Minibatch Loss= 0.0000 time elapsed: 50.7012s
+Step 33800, Minibatch Loss= 0.0000 time elapsed: 50.7570s
+Step 34000, Minibatch Loss= 0.0000 time elapsed: 50.7817s
+Step 34200, Minibatch Loss= 0.0000 time elapsed: 50.8381s
+Step 34400, Minibatch Loss= 0.0000 time elapsed: 50.5865s
+Step 34600, Minibatch Loss= 0.0000 time elapsed: 50.6201s
+Step 34800, Minibatch Loss= 0.0000 time elapsed: 50.5902s
+Step 35000, Minibatch Loss= 0.0000 time elapsed: 50.5817s
+Step 35200, Minibatch Loss= 0.0000 time elapsed: 50.7015s
+Step 35400, Minibatch Loss= 0.0000 time elapsed: 50.0933s
+Step 35600, Minibatch Loss= 0.0000 time elapsed: 48.6869s
+Step 35800, Minibatch Loss= 0.0000 time elapsed: 48.7612s
+Step 36000, Minibatch Loss= 0.0000 time elapsed: 48.6092s
+Step 36200, Minibatch Loss= 0.0000 time elapsed: 48.6956s
+Step 36400, Minibatch Loss= 0.0000 time elapsed: 48.6572s
+Step 36600, Minibatch Loss= 0.0000 time elapsed: 48.7425s
+Step 36800, Minibatch Loss= 0.0000 time elapsed: 48.7430s
+Step 37000, Minibatch Loss= 0.0000 time elapsed: 48.6503s
+Step 37200, Minibatch Loss= 0.0000 time elapsed: 48.6989s
+Step 37400, Minibatch Loss= 0.0000 time elapsed: 48.7713s
+Step 37600, Minibatch Loss= 0.0000 time elapsed: 49.3586s
+Step 37800, Minibatch Loss= 0.0000 time elapsed: 49.0352s
+Step 38000, Minibatch Loss= 0.0000 time elapsed: 48.7653s
+Step 38200, Minibatch Loss= 0.0000 time elapsed: 48.7209s
+Step 38400, Minibatch Loss= 0.0000 time elapsed: 48.6348s
+Step 38600, Minibatch Loss= 0.0000 time elapsed: 48.5691s
+Step 38800, Minibatch Loss= 0.0000 time elapsed: 48.7967s
+Step 39000, Minibatch Loss= 0.0000 time elapsed: 48.7813s
+Step 39200, Minibatch Loss= 0.0000 time elapsed: 48.7672s
+Step 39400, Minibatch Loss= 0.0000 time elapsed: 48.6935s
+Step 39600, Minibatch Loss= 0.0000 time elapsed: 48.6323s
+Step 39800, Minibatch Loss= 0.0000 time elapsed: 48.7031s
+Step 40000, Minibatch Loss= 0.0000 time elapsed: 48.6522s
+model saved
+Step 40200, Minibatch Loss= 0.0000 time elapsed: 49.3914s
+Step 40400, Minibatch Loss= 0.0000 time elapsed: 48.9474s
+Step 40600, Minibatch Loss= 0.0000 time elapsed: 48.7320s
+Step 40800, Minibatch Loss= 0.0000 time elapsed: 48.7460s
+Step 41000, Minibatch Loss= 0.0000 time elapsed: 48.7059s
+Step 41200, Minibatch Loss= 0.0000 time elapsed: 48.7399s
+Step 41400, Minibatch Loss= 0.0000 time elapsed: 48.7279s
+Step 41600, Minibatch Loss= 0.0000 time elapsed: 48.7312s
+Step 41800, Minibatch Loss= 0.0000 time elapsed: 48.7799s
+Step 42000, Minibatch Loss= 0.0000 time elapsed: 48.6863s
+Step 42200, Minibatch Loss= 0.0000 time elapsed: 48.6939s
+Step 42400, Minibatch Loss= 0.0000 time elapsed: 48.7921s
+Step 42600, Minibatch Loss= 0.0000 time elapsed: 48.7438s
+Step 42800, Minibatch Loss= 0.0000 time elapsed: 48.8069s
+Step 43000, Minibatch Loss= 0.0000 time elapsed: 48.6529s
+Step 43200, Minibatch Loss= 0.0000 time elapsed: 48.6826s
+Step 43400, Minibatch Loss= 0.0000 time elapsed: 48.6955s
+Step 43600, Minibatch Loss= 0.0000 time elapsed: 48.7185s
+Step 43800, Minibatch Loss= 0.0000 time elapsed: 48.7987s
+Step 44000, Minibatch Loss= 0.0000 time elapsed: 48.8349s
+Step 44200, Minibatch Loss= 0.0000 time elapsed: 48.7058s
+Step 44400, Minibatch Loss= 0.0000 time elapsed: 48.7008s
+Step 44600, Minibatch Loss= 0.0000 time elapsed: 49.0901s
+Step 44800, Minibatch Loss= 0.0000 time elapsed: 48.7610s
+Step 45000, Minibatch Loss= 0.0000 time elapsed: 49.2205s
+Step 45200, Minibatch Loss= 0.0000 time elapsed: 48.9838s
+Step 45400, Minibatch Loss= 0.0000 time elapsed: 48.6329s
+Step 45600, Minibatch Loss= 0.0000 time elapsed: 48.5503s
+Step 45800, Minibatch Loss= 0.0000 time elapsed: 48.6951s
+Step 46000, Minibatch Loss= 0.0000 time elapsed: 48.5651s
+Step 46200, Minibatch Loss= 0.0000 time elapsed: 48.7313s
+Step 46400, Minibatch Loss= 0.0000 time elapsed: 48.7851s
+Step 46600, Minibatch Loss= 0.0000 time elapsed: 48.7011s
+Step 46800, Minibatch Loss= 0.0000 time elapsed: 48.7859s
+Step 47000, Minibatch Loss= 0.0000 time elapsed: 48.6616s
+Step 47200, Minibatch Loss= 0.0000 time elapsed: 48.7646s
+Step 47400, Minibatch Loss= 0.0000 time elapsed: 48.7527s
+Step 47600, Minibatch Loss= 0.0000 time elapsed: 48.7377s
+Step 47800, Minibatch Loss= 0.0000 time elapsed: 48.8033s
+Step 48000, Minibatch Loss= 0.0000 time elapsed: 48.6361s
+Step 48200, Minibatch Loss= 0.0000 time elapsed: 48.7804s
+Step 48400, Minibatch Loss= 0.0000 time elapsed: 48.5711s
+Step 48600, Minibatch Loss= 0.0000 time elapsed: 48.7908s
+Step 48800, Minibatch Loss= 0.0000 time elapsed: 48.8038s
+Step 49000, Minibatch Loss= 0.0000 time elapsed: 48.7700s
+Step 49200, Minibatch Loss= 0.0000 time elapsed: 48.8991s
+Step 49400, Minibatch Loss= 0.0000 time elapsed: 48.7732s
+Step 49600, Minibatch Loss= 0.0000 time elapsed: 48.8139s
+Step 49800, Minibatch Loss= 0.0000 time elapsed: 48.6950s
+Step 50000, Minibatch Loss= 0.0000 time elapsed: 48.6601s
+model saved
+Step 50200, Minibatch Loss= 0.0000 time elapsed: 50.3686s
+Step 50400, Minibatch Loss= 0.0000 time elapsed: 50.6312s
+Step 50600, Minibatch Loss= 0.0000 time elapsed: 50.5336s
+Step 50800, Minibatch Loss= 0.0000 time elapsed: 50.7605s
+Step 51000, Minibatch Loss= 0.0000 time elapsed: 50.6349s
+Step 51200, Minibatch Loss= 0.0000 time elapsed: 50.6780s
+Step 51400, Minibatch Loss= 0.0000 time elapsed: 50.6494s
+Step 51600, Minibatch Loss= 0.0000 time elapsed: 50.6447s
+Step 51800, Minibatch Loss= 0.0000 time elapsed: 50.5809s
+Step 52000, Minibatch Loss= 0.0000 time elapsed: 50.4010s
+Step 52200, Minibatch Loss= 0.0000 time elapsed: 50.3757s
+Step 52400, Minibatch Loss= 0.0000 time elapsed: 50.8184s
+Step 52600, Minibatch Loss= 0.0000 time elapsed: 50.8994s
+Step 52800, Minibatch Loss= 0.0000 time elapsed: 50.6262s
+Step 53000, Minibatch Loss= 0.0000 time elapsed: 50.3888s
+Step 53200, Minibatch Loss= 0.0000 time elapsed: 50.3947s
+Step 53400, Minibatch Loss= 0.0000 time elapsed: 50.3137s
+Step 53600, Minibatch Loss= 0.0000 time elapsed: 50.2871s
+Step 53800, Minibatch Loss= 0.0000 time elapsed: 50.3719s
+Step 54000, Minibatch Loss= 0.0000 time elapsed: 50.3205s
+Step 54200, Minibatch Loss= 0.0000 time elapsed: 50.3638s
+Step 54400, Minibatch Loss= 0.0000 time elapsed: 50.4111s
+Step 54600, Minibatch Loss= 0.0000 time elapsed: 50.3928s
+Step 54800, Minibatch Loss= 0.0000 time elapsed: 50.4134s
+Step 55000, Minibatch Loss= 0.0000 time elapsed: 50.4051s
+Model_saved, Optimization Finished!

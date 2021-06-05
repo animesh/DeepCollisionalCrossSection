@@ -1,3 +1,24 @@
+## Setup 
+
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+sh Anaconda3-2021.05-Linux-x86_64.sh
+conda create -n py37 python=3.7 anaconda
+conda activate py37
+sudo apt install libfreetype-dev
+sudo apt-get install libfontconfig1-dev
+sudo apt-get install libopenblas-dev
+sudo apt-get install libhdf5-dev
+sudo apt install python3-pip
+pip install -r requirements.txt
+pip install tensorflow==1.13.2
+
+## Create dataset with MaxQuant Score instead of CCS
+python process_data_final.py evidence.txt
+
+## Profit!
+python run_training.py
+
+
 # CCS Model Training and Prediction
 
 Publication:
