@@ -1,0 +1,43 @@
+unique sequences training 648 test 73
+done generating data trainsize: 334 testsize 76
+{'lab_name': 'label', 'fname': 'cache/one_dat_cache_full_label.npy', 'num_input': 32, 'timesteps': 66, 'num_hidden': 128, 'num_layers': 2, 'num_classes': 1, 'dropout_keep_prob': 0.9, 'use_uncertainty': False, 'use_attention': True, 'simple': False, 'num_tasks': -1, 'batch_size': 64, 'model_dir': 'out//', 'model_dir_pretrain': None, 'lr_base': 0.001, 'training_steps': 55000, 'reduce_lr_step': 50000, 'train_file': 'evidence.txt_proc_2_test.pkl', 'test_file': 'evidence.txt_proc_2_test.pkl', 'reduce_train': 0.5, 'scaling_dict': {'0': (6.7287, 163.77)}}
+Tensor("concat:0", shape=(?, 256), dtype=float32) Tensor("stack_bidirectional_rnn/cell_1/bidirectional_rnn/bw/bw/while/Exit_4:0", shape=(?, 128), dtype=float32) Tensor("stack_bidirectional_rnn/cell_1/bidirectional_rnn/fw/fw/while/Exit_4:0", shape=(?, 128), dtype=float32)
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/ash022/DeepCollisionalCrossSection/models.py:23: BasicLSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/contrib/rnn/python/ops/rnn.py:233: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Step 0, Minibatch Loss= 0.2020 time elapsed: 1.2657s
+2021-06-06 13:59:55.065901: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-06 13:59:55.072756: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3392145000 Hz
+2021-06-06 13:59:55.074206: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x562955a8a570 executing computations on platform Host. Devices:
+2021-06-06 13:59:55.074250: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2021-06-06 13:59:55.116659: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2021-06-06 13:59:55.116715: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:148] kernel driver does not appear to be running on this host (DMED7596): /proc/driver/nvidia/version does not exist
+Step 1, Minibatch Loss= 0.0678 time elapsed: 0.6814s
+Traceback (most recent call last):
+  File "bidirectional_lstm.py", line 315, in <module>
+    sess.run(train_op, feed_dict=feed_dict)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1334, in _do_call
+    return fn(*args)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1319, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/home/ash022/anaconda3/envs/py37/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1407, in _call_tf_sessionrun
+    run_metadata)
+KeyboardInterrupt

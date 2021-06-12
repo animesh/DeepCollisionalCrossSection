@@ -1,0 +1,136 @@
+2021-06-05 16:50:40,926 INFO    MainThread:29454 [internal.py:wandb_internal():91] W&B internal server running at pid: 29454, started at: 2021-06-05 16:50:40.924502
+2021-06-05 16:50:40,929 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: check_version
+2021-06-05 16:50:40,929 INFO    WriterThread:29454 [datastore.py:open_for_write():77] open: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/run-66w6hztj.wandb
+2021-06-05 16:50:40,931 DEBUG   SenderThread:29454 [sender.py:send():179] send: header
+2021-06-05 16:50:40,932 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: check_version
+2021-06-05 16:50:41,042 DEBUG   SenderThread:29454 [sender.py:send():179] send: run
+2021-06-05 16:50:41,371 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: run_start
+2021-06-05 16:50:41,384 INFO    SenderThread:29454 [dir_watcher.py:__init__():168] watching files in: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files
+2021-06-05 16:50:41,385 INFO    SenderThread:29454 [sender.py:_start_run_threads():707] run started: 66w6hztj with start time 1622904640
+2021-06-05 16:50:41,385 DEBUG   SenderThread:29454 [sender.py:send():179] send: summary
+2021-06-05 16:50:41,388 INFO    SenderThread:29454 [sender.py:_save_file():829] saving file wandb-summary.json with policy end
+2021-06-05 16:50:42,407 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-summary.json
+2021-06-05 16:50:42,455 DEBUG   HandlerThread:29454 [meta.py:__init__():39] meta init
+2021-06-05 16:50:42,456 DEBUG   HandlerThread:29454 [meta.py:__init__():53] meta init done
+2021-06-05 16:50:42,456 DEBUG   HandlerThread:29454 [meta.py:probe():210] probe
+2021-06-05 16:50:42,471 DEBUG   HandlerThread:29454 [meta.py:_setup_git():200] setup git
+2021-06-05 16:50:42,582 DEBUG   HandlerThread:29454 [meta.py:_setup_git():207] setup git done
+2021-06-05 16:50:42,582 DEBUG   HandlerThread:29454 [meta.py:_save_pip():57] save pip
+2021-06-05 16:50:42,586 DEBUG   HandlerThread:29454 [meta.py:_save_pip():71] save pip done
+2021-06-05 16:50:42,586 DEBUG   HandlerThread:29454 [meta.py:_save_conda():78] save conda
+2021-06-05 16:50:43,411 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/conda-environment.yaml
+2021-06-05 16:50:43,412 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/requirements.txt
+2021-06-05 16:50:46,427 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/output.log
+2021-06-05 16:50:48,093 DEBUG   HandlerThread:29454 [meta.py:_save_conda():86] save conda done
+2021-06-05 16:50:48,093 DEBUG   HandlerThread:29454 [meta.py:probe():252] probe done
+2021-06-05 16:50:48,123 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-05 16:50:48,124 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: stop_status
+2021-06-05 16:50:48,332 DEBUG   SenderThread:29454 [sender.py:send():179] send: files
+2021-06-05 16:50:48,332 INFO    SenderThread:29454 [sender.py:_save_file():829] saving file wandb-metadata.json with policy now
+2021-06-05 16:50:48,439 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/output.log
+2021-06-05 16:50:48,440 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/conda-environment.yaml
+2021-06-05 16:50:48,441 INFO    Thread-8  :29454 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-metadata.json
+2021-06-05 16:50:48,897 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:48,897 DEBUG   SenderThread:29454 [sender.py:send():179] send: telemetry
+2021-06-05 16:50:48,898 DEBUG   SenderThread:29454 [sender.py:send():179] send: exit
+2021-06-05 16:50:48,899 INFO    SenderThread:29454 [sender.py:send_exit():287] handling exit code: 1
+2021-06-05 16:50:48,899 INFO    SenderThread:29454 [sender.py:send_exit():295] send defer
+2021-06-05 16:50:48,900 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:48,900 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:48,901 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 0
+2021-06-05 16:50:48,901 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:48,902 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 0
+2021-06-05 16:50:48,902 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 1
+2021-06-05 16:50:48,903 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:48,904 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 1
+2021-06-05 16:50:48,945 INFO    Thread-11 :29454 [upload_job.py:push():133] Uploaded file /tmp/tmpjbvmt6unwandb/2g3wygy4-wandb-metadata.json
+2021-06-05 16:50:48,974 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:48,975 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 1
+2021-06-05 16:50:48,975 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 2
+2021-06-05 16:50:48,976 DEBUG   SenderThread:29454 [sender.py:send():179] send: stats
+2021-06-05 16:50:48,976 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:48,977 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 2
+2021-06-05 16:50:48,977 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:48,978 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 2
+2021-06-05 16:50:48,978 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 3
+2021-06-05 16:50:48,979 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:48,979 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 3
+2021-06-05 16:50:48,980 DEBUG   SenderThread:29454 [sender.py:send():179] send: summary
+2021-06-05 16:50:48,984 INFO    SenderThread:29454 [sender.py:_save_file():829] saving file wandb-summary.json with policy end
+2021-06-05 16:50:48,987 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:48,987 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 3
+2021-06-05 16:50:48,988 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 4
+2021-06-05 16:50:48,988 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:48,989 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 4
+2021-06-05 16:50:48,990 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:48,990 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 4
+2021-06-05 16:50:49,003 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:49,365 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 5
+2021-06-05 16:50:49,366 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:49,366 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:49,367 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 5
+2021-06-05 16:50:49,367 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:49,368 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 5
+2021-06-05 16:50:49,368 INFO    SenderThread:29454 [dir_watcher.py:finish():282] shutting down directory watcher
+2021-06-05 16:50:49,461 INFO    SenderThread:29454 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/output.log
+2021-06-05 16:50:49,463 INFO    SenderThread:29454 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/config.yaml
+2021-06-05 16:50:49,466 INFO    SenderThread:29454 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-summary.json
+2021-06-05 16:50:49,468 INFO    SenderThread:29454 [dir_watcher.py:finish():312] scan: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files
+2021-06-05 16:50:49,468 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:49,471 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/conda-environment.yaml conda-environment.yaml
+2021-06-05 16:50:49,476 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/config.yaml config.yaml
+2021-06-05 16:50:49,483 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/output.log output.log
+2021-06-05 16:50:49,492 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/requirements.txt requirements.txt
+2021-06-05 16:50:49,501 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-metadata.json wandb-metadata.json
+2021-06-05 16:50:49,502 INFO    SenderThread:29454 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-summary.json wandb-summary.json
+2021-06-05 16:50:49,508 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 6
+2021-06-05 16:50:49,509 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:49,509 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:49,510 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 6
+2021-06-05 16:50:49,511 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:49,511 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 6
+2021-06-05 16:50:49,511 INFO    SenderThread:29454 [file_pusher.py:finish():176] shutting down file pusher
+2021-06-05 16:50:49,512 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 7
+2021-06-05 16:50:49,515 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:49,515 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 7
+2021-06-05 16:50:49,516 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:49,516 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 7
+2021-06-05 16:50:49,612 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:49,863 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 8
+2021-06-05 16:50:49,863 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:49,864 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:49,864 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 8
+2021-06-05 16:50:49,865 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:49,865 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 8
+2021-06-05 16:50:49,866 INFO    SenderThread:29454 [sender.py:send_request_defer():342] send defer: 9
+2021-06-05 16:50:49,867 DEBUG   SenderThread:29454 [sender.py:send():179] send: final
+2021-06-05 16:50:49,867 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: defer
+2021-06-05 16:50:49,867 DEBUG   SenderThread:29454 [sender.py:send():179] send: footer
+2021-06-05 16:50:49,868 INFO    HandlerThread:29454 [handler.py:handle_request_defer():141] handle defer: 9
+2021-06-05 16:50:49,868 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: defer
+2021-06-05 16:50:49,869 INFO    SenderThread:29454 [sender.py:send_request_defer():304] handle sender defer: 9
+2021-06-05 16:50:49,966 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:49,967 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:50,069 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:50,070 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:50,081 INFO    Thread-14 :29454 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/output.log
+2021-06-05 16:50:50,088 INFO    Thread-15 :29454 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/requirements.txt
+2021-06-05 16:50:50,092 INFO    Thread-13 :29454 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/config.yaml
+2021-06-05 16:50:50,113 INFO    Thread-16 :29454 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/wandb-summary.json
+2021-06-05 16:50:50,132 INFO    Thread-12 :29454 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/files/conda-environment.yaml
+2021-06-05 16:50:50,172 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:50,173 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:50,276 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:50,277 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:50,379 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: poll_exit
+2021-06-05 16:50:50,380 DEBUG   SenderThread:29454 [sender.py:send_request():193] send_request: poll_exit
+2021-06-05 16:50:50,380 INFO    SenderThread:29454 [file_pusher.py:join():181] waiting for file pusher
+2021-06-05 16:50:50,382 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: get_summary
+2021-06-05 16:50:50,383 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: sampled_history
+2021-06-05 16:50:50,385 DEBUG   HandlerThread:29454 [handler.py:handle_request():124] handle_request: shutdown
+2021-06-05 16:50:50,385 INFO    HandlerThread:29454 [handler.py:finish():638] shutting down handler
+2021-06-05 16:50:50,867 INFO    WriterThread:29454 [datastore.py:close():258] close: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_165040-66w6hztj/run-66w6hztj.wandb
+2021-06-05 16:50:51,381 INFO    SenderThread:29454 [sender.py:finish():933] shutting down sender
+2021-06-05 16:50:51,382 INFO    SenderThread:29454 [file_pusher.py:finish():176] shutting down file pusher
+2021-06-05 16:50:51,382 INFO    SenderThread:29454 [file_pusher.py:join():181] waiting for file pusher
+2021-06-05 16:50:51,383 INFO    MainThread:29454 [internal.py:handle_exit():78] Internal process exited

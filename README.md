@@ -1,5 +1,5 @@
 ## Setup 
-
+```
 wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 sh Anaconda3-2021.05-Linux-x86_64.sh
 conda create -n py37 python=3.7 anaconda
@@ -10,13 +10,36 @@ sudo apt-get install libopenblas-dev
 sudo apt-get install libhdf5-dev
 sudo apt install python3-pip
 pip install -r requirements.txt
-pip install tensorflow==1.13.2
+pip install tensorflow-gpu==1.13.2
+pip install  twisted
+conda -c rapidsai -c nvidia -c conda-forge -c defaults rapids-blazing=0.17 cudatoolkit=10.1 cudatoolkit=11.0 cudatoolkit=10.0 cudnn
+git clone https://github.com/animesh/DeepCollisionalCrossSection
+git checkout 3cec81c7992536200844f0f6527a076e662ff842
+cd DeepCollisionalCrossSection
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+sudo sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+sudo apt update
+sudo apt upgrade
+sudo apt-get install -y cuda-toolkit-10-0
+#sudo apt-get install -y cuda-toolkit-11-0
+#sudo apt install nvidia-utils-460
+#sudo apt-get install cuda-drivers
+export CUDA_VISIBLE_DEVICES=0
+```
 
 ## Create dataset with MaxQuant Score instead of CCS
+```
 python process_data_final.py evidence.txt
+```
 
 ## Profit!
-python run_training.py
+```
+mkdir out
+python bidirectional_lstm.py evidence.txt_proc_2_train.pkl evidence.txt_proc_2_test.pkl
+```
+
+Output will be written to subfolder "out" 
+
 
 
 # CCS Model Training and Prediction

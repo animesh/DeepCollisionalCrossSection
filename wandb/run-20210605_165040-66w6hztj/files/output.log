@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "bidirectional_lstm.py", line 18, in <module>
+    wandb.log({'Loss': loss_op, 'Pred' : prediction})
+NameError: name 'loss_op' is not defined

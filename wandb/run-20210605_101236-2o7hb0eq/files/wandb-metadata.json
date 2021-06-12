@@ -1,0 +1,24 @@
+{
+    "os": "Windows-10-10.0.21313-SP0",
+    "python": "3.7.9",
+    "heartbeatAt": "2021-06-05T08:12:39.834100",
+    "startedAt": "2021-06-05T08:12:36.890536",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "run_training.py",
+    "codePath": "run_training.py",
+    "git": {
+        "remote": "https://github.com/animesh/DeepCollisionalCrossSection",
+        "commit": "31c57192d700d2423bf8c3f8e4c03067fd4640b7"
+    },
+    "email": "sharma_animesh@hotmail.com",
+    "root": "C:/Users/animeshs/GD/DeepCollisionalCrossSection",
+    "host": "DMED7596",
+    "username": "animeshs",
+    "executable": "c:\\intelpython\\python3.7\\envs\\2021.2.0\\python.exe"
+}

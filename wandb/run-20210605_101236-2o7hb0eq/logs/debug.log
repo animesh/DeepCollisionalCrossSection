@@ -1,0 +1,23 @@
+2021-06-05 10:12:36,897 INFO    MainThread:3976 [wandb_setup.py:_flush():69] setting env: {}
+2021-06-05 10:12:36,898 INFO    MainThread:3976 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-06-05 10:12:36,898 INFO    MainThread:3976 [wandb_setup.py:_flush():69] setting login settings: {'api_key': '561b0eecf85eeca858dadd27473d8a2ed36af9df'}
+2021-06-05 10:12:36,898 INFO    MainThread:3976 [wandb_init.py:_log_setup():336] Logging user logs to C:\Users\animeshs\GD\DeepCollisionalCrossSection\wandb\run-20210605_101236-2o7hb0eq\logs\debug.log
+2021-06-05 10:12:36,899 INFO    MainThread:3976 [wandb_init.py:_log_setup():337] Logging internal logs to C:\Users\animeshs\GD\DeepCollisionalCrossSection\wandb\run-20210605_101236-2o7hb0eq\logs\debug-internal.log
+2021-06-05 10:12:36,901 INFO    MainThread:3976 [wandb_init.py:init():369] calling init triggers
+2021-06-05 10:12:36,901 INFO    MainThread:3976 [wandb_init.py:init():376] wandb.init called with sweep_config: {}
+config: {}
+2021-06-05 10:12:36,901 INFO    MainThread:3976 [wandb_init.py:init():418] starting backend
+2021-06-05 10:12:36,901 INFO    MainThread:3976 [backend.py:_multiprocessing_setup():72] multiprocessing start_methods=spawn, using: spawn
+2021-06-05 10:12:36,923 INFO    MainThread:3976 [backend.py:ensure_launched():132] starting backend process...
+2021-06-05 10:12:37,051 INFO    MainThread:3976 [backend.py:ensure_launched():137] started backend process with pid: 15444
+2021-06-05 10:12:37,052 INFO    MainThread:3976 [wandb_init.py:init():423] backend started and connected
+2021-06-05 10:12:37,053 INFO    MainThread:3976 [wandb_init.py:init():465] updated telemetry
+2021-06-05 10:12:37,054 INFO    MainThread:3976 [wandb_init.py:init():484] communicating current version
+2021-06-05 10:12:39,125 INFO    MainThread:3976 [wandb_init.py:init():489] got version response 
+2021-06-05 10:12:39,125 INFO    MainThread:3976 [wandb_init.py:init():497] communicating run to backend with 30 second timeout
+2021-06-05 10:12:39,757 INFO    MainThread:3976 [wandb_init.py:init():522] starting run threads in backend
+2021-06-05 10:12:42,359 INFO    MainThread:3976 [wandb_run.py:_console_start():1538] atexit reg
+2021-06-05 10:12:42,360 INFO    MainThread:3976 [wandb_run.py:_redirect():1412] redirect: SettingsConsole.WRAP
+2021-06-05 10:12:42,361 INFO    MainThread:3976 [wandb_run.py:_redirect():1449] Wrapping output streams.
+2021-06-05 10:12:42,362 INFO    MainThread:3976 [wandb_run.py:_redirect():1473] Redirects installed.
+2021-06-05 10:12:42,362 INFO    MainThread:3976 [wandb_init.py:init():547] run started, returning control to user process

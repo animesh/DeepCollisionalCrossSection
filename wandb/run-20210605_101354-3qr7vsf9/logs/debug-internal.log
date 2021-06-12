@@ -1,0 +1,63 @@
+2021-06-05 10:13:55,273 INFO    MainThread:525 [internal.py:wandb_internal():91] W&B internal server running at pid: 525, started at: 2021-06-05 10:13:55.271140
+2021-06-05 10:13:55,276 DEBUG   HandlerThread:525 [handler.py:handle_request():124] handle_request: check_version
+2021-06-05 10:13:55,276 INFO    WriterThread:525 [datastore.py:open_for_write():77] open: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/run-3qr7vsf9.wandb
+2021-06-05 10:13:55,279 DEBUG   SenderThread:525 [sender.py:send():179] send: header
+2021-06-05 10:13:55,279 DEBUG   SenderThread:525 [sender.py:send_request():193] send_request: check_version
+2021-06-05 10:13:55,379 DEBUG   SenderThread:525 [sender.py:send():179] send: run
+2021-06-05 10:13:55,735 DEBUG   HandlerThread:525 [handler.py:handle_request():124] handle_request: run_start
+2021-06-05 10:13:55,757 INFO    SenderThread:525 [dir_watcher.py:__init__():168] watching files in: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files
+2021-06-05 10:13:55,758 INFO    SenderThread:525 [sender.py:_start_run_threads():707] run started: 3qr7vsf9 with start time 1622880834
+2021-06-05 10:13:55,758 DEBUG   SenderThread:525 [sender.py:send():179] send: summary
+2021-06-05 10:13:55,762 INFO    SenderThread:525 [sender.py:_save_file():829] saving file wandb-summary.json with policy end
+2021-06-05 10:13:56,767 INFO    Thread-8  :525 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/wandb-summary.json
+2021-06-05 10:13:57,950 DEBUG   HandlerThread:525 [meta.py:__init__():39] meta init
+2021-06-05 10:13:57,951 DEBUG   HandlerThread:525 [meta.py:__init__():53] meta init done
+2021-06-05 10:13:57,951 DEBUG   HandlerThread:525 [meta.py:probe():210] probe
+2021-06-05 10:13:57,967 DEBUG   HandlerThread:525 [meta.py:_setup_git():200] setup git
+2021-06-05 10:13:58,096 DEBUG   HandlerThread:525 [meta.py:_setup_git():207] setup git done
+2021-06-05 10:13:58,097 DEBUG   HandlerThread:525 [meta.py:_save_pip():57] save pip
+2021-06-05 10:13:58,101 DEBUG   HandlerThread:525 [meta.py:_save_pip():71] save pip done
+2021-06-05 10:13:58,102 DEBUG   HandlerThread:525 [meta.py:_save_conda():78] save conda
+2021-06-05 10:13:58,799 INFO    Thread-8  :525 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/conda-environment.yaml
+2021-06-05 10:13:58,801 INFO    Thread-8  :525 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/requirements.txt
+2021-06-05 10:14:00,812 INFO    Thread-8  :525 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:02,822 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:04,118 DEBUG   HandlerThread:525 [meta.py:_save_conda():86] save conda done
+2021-06-05 10:14:04,118 DEBUG   HandlerThread:525 [meta.py:probe():252] probe done
+2021-06-05 10:14:04,146 DEBUG   HandlerThread:525 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-05 10:14:04,147 DEBUG   SenderThread:525 [sender.py:send_request():193] send_request: stop_status
+2021-06-05 10:14:04,352 DEBUG   SenderThread:525 [sender.py:send():179] send: files
+2021-06-05 10:14:04,354 INFO    SenderThread:525 [sender.py:_save_file():829] saving file wandb-metadata.json with policy now
+2021-06-05 10:14:04,833 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/conda-environment.yaml
+2021-06-05 10:14:04,834 INFO    Thread-8  :525 [dir_watcher.py:_on_file_created():216] file/dir created: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/wandb-metadata.json
+2021-06-05 10:14:04,954 INFO    Thread-11 :525 [upload_job.py:push():133] Uploaded file /tmp/tmp42c92b4wwandb/u87b7or4-wandb-metadata.json
+2021-06-05 10:14:06,846 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:08,859 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:10,871 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:12,886 INFO    Thread-8  :525 [dir_watcher.py:_on_file_modified():229] file/dir modified: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:19,354 DEBUG   HandlerThread:525 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-05 10:14:19,355 DEBUG   SenderThread:525 [sender.py:send_request():193] send_request: stop_status
+2021-06-05 10:14:26,020 DEBUG   SenderThread:525 [sender.py:send():179] send: stats
+2021-06-05 10:14:34,564 DEBUG   HandlerThread:525 [handler.py:handle_request():124] handle_request: stop_status
+2021-06-05 10:14:34,565 DEBUG   SenderThread:525 [sender.py:send_request():193] send_request: stop_status
+2021-06-05 10:14:35,906 WARNING MainThread:525 [internal.py:wandb_internal():147] Internal process interrupt: 1
+2021-06-05 10:14:36,380 WARNING MainThread:525 [internal.py:wandb_internal():147] Internal process interrupt: 2
+2021-06-05 10:14:36,380 ERROR   MainThread:525 [internal.py:wandb_internal():150] Internal process interrupted.
+2021-06-05 10:14:36,811 INFO    SenderThread:525 [sender.py:finish():933] shutting down sender
+2021-06-05 10:14:36,812 INFO    SenderThread:525 [dir_watcher.py:finish():282] shutting down directory watcher
+2021-06-05 10:14:36,904 INFO    SenderThread:525 [dir_watcher.py:finish():312] scan: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files
+2021-06-05 10:14:36,907 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/conda-environment.yaml conda-environment.yaml
+2021-06-05 10:14:36,914 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/config.yaml config.yaml
+2021-06-05 10:14:36,924 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log output.log
+2021-06-05 10:14:36,933 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/requirements.txt requirements.txt
+2021-06-05 10:14:36,940 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/wandb-metadata.json wandb-metadata.json
+2021-06-05 10:14:36,940 INFO    SenderThread:525 [dir_watcher.py:finish():318] scan save: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/wandb-summary.json wandb-summary.json
+2021-06-05 10:14:36,949 INFO    SenderThread:525 [file_pusher.py:finish():176] shutting down file pusher
+2021-06-05 10:14:36,949 INFO    SenderThread:525 [file_pusher.py:join():181] waiting for file pusher
+2021-06-05 10:14:37,023 INFO    WriterThread:525 [datastore.py:close():258] close: /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/run-3qr7vsf9.wandb
+2021-06-05 10:14:37,529 INFO    Thread-12 :525 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/conda-environment.yaml
+2021-06-05 10:14:37,530 INFO    Thread-16 :525 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/wandb-summary.json
+2021-06-05 10:14:37,538 INFO    Thread-14 :525 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/output.log
+2021-06-05 10:14:37,566 INFO    Thread-15 :525 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/requirements.txt
+2021-06-05 10:14:37,593 INFO    Thread-13 :525 [upload_job.py:push():133] Uploaded file /mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection/wandb/run-20210605_101354-3qr7vsf9/files/config.yaml
+2021-06-05 10:14:38,120 INFO    MainThread:525 [internal.py:handle_exit():78] Internal process exited

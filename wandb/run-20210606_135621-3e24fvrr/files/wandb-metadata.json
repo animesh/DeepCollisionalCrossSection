@@ -1,0 +1,26 @@
+{
+    "os": "Linux-5.4.91-microsoft-standard-WSL2-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.10",
+    "heartbeatAt": "2021-06-06T11:56:23.467395",
+    "startedAt": "2021-06-06T11:56:21.445961",
+    "docker": null,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "out//",
+        "evidence.txt_proc_2_test.pkl",
+        "evidence.txt_proc_2_test.pkl"
+    ],
+    "state": "running",
+    "program": "bidirectional_lstm.py",
+    "codePath": "bidirectional_lstm.py",
+    "git": {
+        "remote": "https://github.com/animesh/DeepCollisionalCrossSection",
+        "commit": "31c57192d700d2423bf8c3f8e4c03067fd4640b7"
+    },
+    "email": "animesh@fuzzylife.org",
+    "root": "/mnt/c/Users/animeshs/GD/DeepCollisionalCrossSection",
+    "host": "DMED7596",
+    "username": "ash022",
+    "executable": "/home/ash022/anaconda3/envs/py37/bin/python"
+}

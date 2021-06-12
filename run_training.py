@@ -1,12 +1,7 @@
 import os
 import sys
+os.environ['CUDA_VISIBLE_DEVICES'] = "/gpu:0"
 import glob
-import wandb
-wandb.init(project="deepScore")
-#wandb.log({'Loss': loss})
-device_name = "gpu"  # Choose device from cmd line. Options: gpu or cpu
-if device_name == "gpu":
-    device_name = "/gpu:0"
 
 if __name__ == '__main__':
  

@@ -1,0 +1,5 @@
+name: 2021.2.0
+channels:
+  - intel
+  - defaults
+prefix: C:\Users\animeshs\.conda\envs\2021.2.0
